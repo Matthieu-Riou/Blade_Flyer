@@ -6,4 +6,6 @@ VoyageurCommerce2 :
 	VPRA25.dat : 0.472000  -  0.492000  -  0.468000
 	VPRA50.dat : 93.248000  -  93.356000  -  93.776000
 
-
+VoyageurCommerce2opti :
+	VPRA25.dat : 0.480000
+	VPRA50.dat : 93.54000
