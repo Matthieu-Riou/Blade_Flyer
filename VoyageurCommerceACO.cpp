@@ -1,19 +1,23 @@
 #include "VoyageurCommerceACO.h"
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
+#include <utility>
 
-VoyageurCommerceACO::VoyageurCommerceACO(std::vector<int> const& client) : clients(client), fourmi(client)
+VoyageurCommerceACO::VoyageurCommerceACO(std::vector<int> const& client) : clients(client), intensite(clients.size(), std::vector<int>(clients.size(), 0))
 {
+	std::cout << "coucou";
 	srand(time(NULL));
+	std::cout << intensite[0][0];
 }
 
 std::pair<int, std::vector<int>& > VoyageurCommerceACO::execute(donnees const& d)
 {
-	int tmax = 15;
-	int m = 15;
-	int nbVille = clients.size(
+	int tmax = 1;
+	int m = 1;
+	int nbVille = clients.size();
 
-	for(int t = 0; t < 15; t++)
+	for(int t = 0; t < tmax; t++)
 	{
 		for(int k = 0; k < m; k++)
 		{
@@ -38,9 +42,15 @@ std::pair<int, std::vector<int>& > VoyageurCommerceACO::execute(donnees const& d
 				std::cout << chemin[i] << " - ";
 			}
 
+			//std::swap(chemin, permutationMin);
+
 			std::cout << std::endl << std::endl;
 		}
 	}
+	
+	//std::pair<int, std::vector<int>& > retour(5, permutationMin);
+	
+	//return retour;
 }
 
 int VoyageurCommerceACO::aleatoire(int villeDepart, std::vector<int> const& villes, donnees const& d)
@@ -58,7 +68,7 @@ int VoyageurCommerceACO::aleatoire(int villeDepart, std::vector<int> const& vill
 		else
 		{
 			proba.push_back(total);
-			total += d.C[villeDepart][villes[i]]
+			total += (intensite[villeDepart][villes[i]] * (1/d.C[villeDepart][villes[i]]));
 		}
 	}
 
@@ -73,7 +83,11 @@ int VoyageurCommerceACO::rechercheDicho(int const& random, std::vector<int> cons
 
 	if(proba[index] <= random)
 	{
-		if(proba[index +1] > random)
+		if(index == fin)
+		{
+			return index;
+		}
+		else if(proba[index +1] > random)
 		{
 			return index;
 		}

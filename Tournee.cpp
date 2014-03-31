@@ -1,5 +1,5 @@
 #include "Tournee.h"
-#include "VoyageurCommerce2opti.h"
+#include "VoyageurCommerceACO.h"
 #include <iostream>
 #include <limits>
 
@@ -18,10 +18,11 @@ int Tournee::getLongueurMin() const
 
 int Tournee::calculLongueurMin(donnees const& d) //Problème du voyageur de commerce
 {
-	VoyageurCommerce v(clients);
-	std::pair<int, std::vector<int>& > res = v.execute(d);
-	longueurMin = res.first;
-	permutationMin = res.second;
+	VoyageurCommerceACO v(clients);
+	//std::pair<int, std::vector<int>& > res = 
+	v.execute(d);
+	//longueurMin = res.first;
+	//permutationMin = res.second;
 }	
 
 
