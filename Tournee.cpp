@@ -18,7 +18,7 @@ int Tournee::getLongueurMin() const
 
 int Tournee::calculLongueurMin(donnees const& d) //Problème du voyageur de commerce
 {
-	VoyageurCommerce2opti v(clients);
+	VoyageurCommerce v(clients);
 	std::pair<int, std::vector<int>& > res = v.execute(d);
 	longueurMin = res.first;
 	permutationMin = res.second;

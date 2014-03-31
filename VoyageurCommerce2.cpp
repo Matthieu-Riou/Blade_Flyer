@@ -2,16 +2,6 @@
 #include <iostream>
 #include <limits>
 
-void afficheListe(std::vector<int> const& l)
-{
-	for(int i = 0; i < l.size(); i++)
-	{
-		std::cout << l[i] << ", ";
-	}
-
-	std::cout << std::endl;
-}
-
 VoyageurCommerce2::VoyageurCommerce2(std::vector<int> const& client): clients(client)
 {}
 
