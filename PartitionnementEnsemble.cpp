@@ -1,6 +1,15 @@
 #include "PartitionnementEnsemble.h"
 
-void partitionnementEnsemble(std::vector<Tournee*> const& tournee, int nbLieux)
+/*! \file PartitionnementEnsemble.cpp
+	\brief Résolution du problème de partitionnement d'ensemble
+	\author RIOU Matthieu, MAUSSION Damien
+*/
+
+/*! \brief Fonction utilisant glpk pour résoudre le problème de partitionnement d'ensemble
+	\param tournee Le tableau des tournées, qui sont tous les ensembles du problème
+	\param nbLieux Le nombre de lieux du problème
+*/
+void partitionnementEnsemble(std::list<Tournee*> const& tournee, int nbLieux)
 {
 	//Déclaration du problème
 	glp_prob *prob;
@@ -16,10 +25,12 @@ void partitionnementEnsemble(std::vector<Tournee*> const& tournee, int nbLieux)
 	std::vector<double> ar;
 	
 	//Variables
+	int i;
 	int j;
 	bool fini;
 	double z;
 	double x[nbVar+1];
+	std::list<Tournee*>::const_iterator it;
 	
 	
 	//Tableau des noms
@@ -37,7 +48,7 @@ void partitionnementEnsemble(std::vector<Tournee*> const& tournee, int nbLieux)
 	
 	glp_add_rows(prob, nbContr);
 	
-	for(int i = 1; i <= nbContr; i++)
+	for(i = 1; i <= nbContr; i++)
 	{
 		sprintf(nomContr[i], "Contrainte %d", i);
 		
@@ -51,7 +62,7 @@ void partitionnementEnsemble(std::vector<Tournee*> const& tournee, int nbLieux)
 	
 	glp_add_cols(prob, nbVar); //On met à suivre les variables x puis les variables y
 	
-	for(int i = 1; i <= nbVar; i++)
+	for(i = 1; i <= nbVar; i++)
 	{
 		sprintf(nomVar[i],"x%d",i);
 		
@@ -63,9 +74,12 @@ void partitionnementEnsemble(std::vector<Tournee*> const& tournee, int nbLieux)
 	
 	//Fonction objectif
 	
-	for(int i = 1;i <= nbVar;i++)
+	
+	i = 1;
+	for(it = tournee.begin(); it != tournee.end(); ++it)
 	{
-		glp_set_obj_coef(prob,i,tournee[i-1]->getLongueurMin());
+		glp_set_obj_coef(prob,i,(*it)->getLongueurMin());
+		i++;
 	}
 	
 	//Matrice creuse
@@ -77,17 +91,20 @@ void partitionnementEnsemble(std::vector<Tournee*> const& tournee, int nbLieux)
 	ja.push_back(0);
 	ar.push_back(0.);
 
-	//Pour chaque contrainte	
-	for(int i = 0; i < tournee.size(); i++)
+	//Pour chaque contrainte
+	i = 1;
+	for(it = tournee.begin(); it != tournee.end(); ++it)
 	{
-		std::vector<int> const& clients = tournee[i]->getClients();
+		std::vector<int> const& clients = (*it)->getClients();
 
 		for(int j = 0; j < clients.size(); j++)
 		{
 			ia.push_back(clients[j]); //Le numero de la contrainte
-			ja.push_back(i+1); //Le numero de la variable
+			ja.push_back(i); //Le numero de la variable
 			ar.push_back(1.0);
 		}
+		
+		i++;
 	}
 
 	glp_load_matrix(prob,ia.size()-1,ia.data(),ja.data(),ar.data()); 
@@ -112,12 +129,26 @@ void partitionnementEnsemble(std::vector<Tournee*> const& tournee, int nbLieux)
 
 	//Affichage
 
-	printf("z = %lf\n",z);
+	printf("\n\nz = %lf\n",z);
+
+	it = tournee.begin(); //On va itérer sur les tournées en même temps qu'on parcourt le tableau des variables correspondantes
 
 	for(int i = 0; i < nbVar; i++) //Affichage des x
 	{
 		if((int)(x[i] + 0.5) == 1)
-			printf("%s = %d\n",nomVar[i+1],(int)(x[i] + 0.5)); /* un cast est ajouté, x[i] pourrait être égal à 0.99999... */ 
+		{
+			printf("%s = %d  :  ",nomVar[i+1],(int)(x[i] + 0.5)); /* un cast est ajouté, x[i] pourrait être égal à 0.99999... */ 
+			
+			printf("[%d", (*it)->getPermutationMin()[0]);
+			for(int j = 1; j < (*it)->getPermutationMin().size(); j++)
+			{
+				printf(", %d", (*it)->getPermutationMin()[j]);
+			}
+			
+			printf("] de longueur %d\n", (*it)->getLongueurMin());
+		}
+		
+		++it;
 	}
 	
 

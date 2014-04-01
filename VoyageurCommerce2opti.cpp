@@ -1,30 +1,46 @@
 #include "VoyageurCommerce2opti.h"
-#include <iostream>
-#include <limits>
 
+/*! \file VoyageurCommerce2opti.cpp
+	\brief Optimisation de la deuxième version du problème de voyageur de commerce
+	\author RIOU Matthieu, MAUSSION Damien
+*/
+
+
+/*! \brief Constructeur de VoyageurCommerce2opti
+	\param client Le tableau des clients
+*/
 VoyageurCommerce2opti::VoyageurCommerce2opti(std::vector<int> const& client): clients(client)
 {}
 
+
+/*! \brief Fonction résolvant le problème du voyageur de commerce
+	\param d Les données du problème
+ 	\return Paire (longueurMin, permutationMin)
+*/
 std::pair<int, std::vector<int>& > VoyageurCommerce2opti::execute(donnees const& d)		 //Problème du voyageur de commerce
 {
 	longueurMin = std::numeric_limits<int>::max();
 	std::vector<int> permut;
 	permut.reserve(clients.size());
-	std::vector<int> index;
-
-	for(int i = 0; i < clients.size(); i++)
-	{
-		index.push_back(clients[i]);
-	}
+	std::vector<int> copieClient(clients);
 	
-	recursifLongueurMin(permut, index, d, 0);
+	recursifLongueurMin(permut, copieClient, d, 0);
 		
 	std::pair<int, std::vector<int>& > retour(longueurMin, permutationMin);
 	
 	return retour;
 }	
 
-void VoyageurCommerce2opti::recursifLongueurMin(std::vector<int>& permut, std::vector<int>& index, donnees const& d, int longueurCourante)
+
+/*! \brief Fonction récursive résolvant le problème du voyageur de commerce
+	Cette version place à chaque itération tous les clients possibles dans l'emplacement suivant de la permutation
+	De plus, elle optimise l'algorithme en calculant la longueur à chaque itération, et pas seulement à la fin, pour couper plus tôt le déroulement de l'algorithme
+	\param permut La permutation courante
+	\param copieClient Le tableau des clients restants
+	\param d Les données du problème
+	\param longueurCourante La longueur de la permutation courante
+*/
+void VoyageurCommerce2opti::recursifLongueurMin(std::vector<int>& permut, std::vector<int>& copieClient, donnees const& d, int longueurCourante)
 {
 	if(permut.size() == 1)
 		longueurCourante = d.C[0][permut[0]];
@@ -33,26 +49,24 @@ void VoyageurCommerce2opti::recursifLongueurMin(std::vector<int>& permut, std::v
 
 	if(longueurCourante < longueurMin)
 	{
-		bool fini = true;
-
-		for(int i = 0; i < index.size(); i++)
+		if(permut.size() < copieClient.size())
 		{
-			if(index[i] != -1)
+			for(int i = 0; i < copieClient.size(); i++)
 			{
-				fini = false;
-
-				int tmp = index[i];
-				permut.push_back(tmp);
-				index[i] = -1;
+				if(copieClient[i] != -1)
+				{
+					int tmp = copieClient[i];
+					permut.push_back(tmp);
+					copieClient[i] = -1;
 			
-				recursifLongueurMin(permut, index, d, longueurCourante);
+					recursifLongueurMin(permut, copieClient, d, longueurCourante);
 			
-				permut.pop_back();
-				index[i] = tmp; //Fais le it++
+					permut.pop_back();
+					copieClient[i] = tmp;
+				}
 			}
 		}
-	
-		if(fini)
+		else
 		{
 			int min = longueurCourante + d.C[permut[permut.size()-1]][0];
 		
@@ -63,18 +77,4 @@ void VoyageurCommerce2opti::recursifLongueurMin(std::vector<int>& permut, std::v
 			}
 		}
 	}
-}
-
-int VoyageurCommerce2opti::calculLongueur(std::vector<int> const& permut, donnees const& d) const
-{
-	int min(d.C[0][permut[0]]);
-	
-	for(int i = 1; i < permut.size(); i++)
-	{
-		min += d.C[permut[i-1] ] [permut[i] ];
-	}
-	
-	min += d.C[permut[permut.size()-1] ][0];
-	
-	return min;
 }

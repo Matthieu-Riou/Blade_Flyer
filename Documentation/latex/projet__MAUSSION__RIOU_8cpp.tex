@@ -1,0 +1,121 @@
+\hypertarget{projet__MAUSSION__RIOU_8cpp}{\section{projet\-\_\-\-M\-A\-U\-S\-S\-I\-O\-N\-\_\-\-R\-I\-O\-U.\-cpp \-File \-Reference}
+\label{projet__MAUSSION__RIOU_8cpp}\index{projet\-\_\-\-M\-A\-U\-S\-S\-I\-O\-N\-\_\-\-R\-I\-O\-U.\-cpp@{projet\-\_\-\-M\-A\-U\-S\-S\-I\-O\-N\-\_\-\-R\-I\-O\-U.\-cpp}}
+}
+
+
+\-Optimisation de la deuxième version du problème de voyageur de commerce.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$glpk.\-h$>$}\*
+{\ttfamily \#include $<$time.\-h$>$}\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\*
+{\ttfamily \#include $<$sys/resource.\-h$>$}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$list$>$}\*
+{\ttfamily \#include \char`\"{}donnees.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}\-Algo\-Enumeration.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}\-Partitionnement\-Ensemble.\-h\char`\"{}}\*
+{\ttfamily \#include $<$iostream$>$}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{projet__MAUSSION__RIOU_8cpp_a6f9802cee720fd970a424668c3b0a4bd}{void \hyperlink{projet__MAUSSION__RIOU_8cpp_a6f9802cee720fd970a424668c3b0a4bd}{crono\-\_\-start} ()}\label{projet__MAUSSION__RIOU_8cpp_a6f9802cee720fd970a424668c3b0a4bd}
+
+\begin{DoxyCompactList}\small\item\em \-Démarre le crono. \end{DoxyCompactList}\item 
+\hypertarget{projet__MAUSSION__RIOU_8cpp_a6714d28c6ec99cca240c3137794137b8}{void \hyperlink{projet__MAUSSION__RIOU_8cpp_a6714d28c6ec99cca240c3137794137b8}{crono\-\_\-stop} ()}\label{projet__MAUSSION__RIOU_8cpp_a6714d28c6ec99cca240c3137794137b8}
+
+\begin{DoxyCompactList}\small\item\em \-Arrête le crono. \end{DoxyCompactList}\item 
+double \hyperlink{projet__MAUSSION__RIOU_8cpp_ae2666ea16d74362326e4e56b0b708d68}{crono\-\_\-ms} ()
+\begin{DoxyCompactList}\small\item\em \-Donne le temps du crono. \end{DoxyCompactList}\item 
+void \hyperlink{projet__MAUSSION__RIOU_8cpp_a667003cfd6f66a62d7f583af4a61459b}{lecture\-\_\-data} (char $\ast$file, \hyperlink{structdonnees}{donnees} $\ast$p)
+\begin{DoxyCompactList}\small\item\em \-Lecture des données. \end{DoxyCompactList}\item 
+void \hyperlink{projet__MAUSSION__RIOU_8cpp_accb7d5b7422b32ee50481129264785e2}{free\-\_\-data} (\hyperlink{structdonnees}{donnees} $\ast$p)
+\begin{DoxyCompactList}\small\item\em \-Libère les données en mémoire. \end{DoxyCompactList}\item 
+int \hyperlink{projet__MAUSSION__RIOU_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em \-Fonction main \-Elle résout le problème d'optimisation de \-Blade \-Flyer en le décomposant en trois parties distinctes. \-Elle affiche ensuite son temps d'exécution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{projet__MAUSSION__RIOU_8cpp_a21c315f62c93064d3ead800348451683}{struct timeval start\-\_\-utime {\bfseries stop\-\_\-utime}}\label{projet__MAUSSION__RIOU_8cpp_a21c315f62c93064d3ead800348451683}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Optimisation de la deuxième version du problème de voyageur de commerce. \begin{DoxyAuthor}{\-Author}
+\-R\-I\-O\-U \-Matthieu, \-M\-A\-U\-S\-S\-I\-O\-N \-Damien 
+\end{DoxyAuthor}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{projet__MAUSSION__RIOU_8cpp_ae2666ea16d74362326e4e56b0b708d68}{\index{projet\-\_\-\-M\-A\-U\-S\-S\-I\-O\-N\-\_\-\-R\-I\-O\-U.\-cpp@{projet\-\_\-\-M\-A\-U\-S\-S\-I\-O\-N\-\_\-\-R\-I\-O\-U.\-cpp}!crono\-\_\-ms@{crono\-\_\-ms}}
+\index{crono\-\_\-ms@{crono\-\_\-ms}!projet_MAUSSION_RIOU.cpp@{projet\-\_\-\-M\-A\-U\-S\-S\-I\-O\-N\-\_\-\-R\-I\-O\-U.\-cpp}}
+\subsubsection[{crono\-\_\-ms}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf crono\-\_\-ms} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{projet__MAUSSION__RIOU_8cpp_ae2666ea16d74362326e4e56b0b708d68}
+
+
+\-Donne le temps du crono. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Le temps en ms 
+\end{DoxyReturn}
+\hypertarget{projet__MAUSSION__RIOU_8cpp_accb7d5b7422b32ee50481129264785e2}{\index{projet\-\_\-\-M\-A\-U\-S\-S\-I\-O\-N\-\_\-\-R\-I\-O\-U.\-cpp@{projet\-\_\-\-M\-A\-U\-S\-S\-I\-O\-N\-\_\-\-R\-I\-O\-U.\-cpp}!free\-\_\-data@{free\-\_\-data}}
+\index{free\-\_\-data@{free\-\_\-data}!projet_MAUSSION_RIOU.cpp@{projet\-\_\-\-M\-A\-U\-S\-S\-I\-O\-N\-\_\-\-R\-I\-O\-U.\-cpp}}
+\subsubsection[{free\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf free\-\_\-data} (
+\begin{DoxyParamCaption}
+\item[{{\bf donnees} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{projet__MAUSSION__RIOU_8cpp_accb7d5b7422b32ee50481129264785e2}
+
+
+\-Libère les données en mémoire. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em p} & \-Les données à détruire \\
+\hline
+\end{DoxyParams}
+\hypertarget{projet__MAUSSION__RIOU_8cpp_a667003cfd6f66a62d7f583af4a61459b}{\index{projet\-\_\-\-M\-A\-U\-S\-S\-I\-O\-N\-\_\-\-R\-I\-O\-U.\-cpp@{projet\-\_\-\-M\-A\-U\-S\-S\-I\-O\-N\-\_\-\-R\-I\-O\-U.\-cpp}!lecture\-\_\-data@{lecture\-\_\-data}}
+\index{lecture\-\_\-data@{lecture\-\_\-data}!projet_MAUSSION_RIOU.cpp@{projet\-\_\-\-M\-A\-U\-S\-S\-I\-O\-N\-\_\-\-R\-I\-O\-U.\-cpp}}
+\subsubsection[{lecture\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf lecture\-\_\-data} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{file, }
+\item[{{\bf donnees} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{projet__MAUSSION__RIOU_8cpp_a667003cfd6f66a62d7f583af4a61459b}
+
+
+\-Lecture des données. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em file} & \-Le chemin du fichier de données \\
+\hline
+{\em p} & \-Les données à remplir \\
+\hline
+\end{DoxyParams}
+\hypertarget{projet__MAUSSION__RIOU_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{\index{projet\-\_\-\-M\-A\-U\-S\-S\-I\-O\-N\-\_\-\-R\-I\-O\-U.\-cpp@{projet\-\_\-\-M\-A\-U\-S\-S\-I\-O\-N\-\_\-\-R\-I\-O\-U.\-cpp}!main@{main}}
+\index{main@{main}!projet_MAUSSION_RIOU.cpp@{projet\-\_\-\-M\-A\-U\-S\-S\-I\-O\-N\-\_\-\-R\-I\-O\-U.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf main} (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{projet__MAUSSION__RIOU_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+\-Fonction main \-Elle résout le problème d'optimisation de \-Blade \-Flyer en le décomposant en trois parties distinctes. \-Elle affiche ensuite son temps d'exécution. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em argc} & \-Le nombre d'argument \\
+\hline
+{\em argv} & \-Les arguments. \-Le nom du fichier de données est attendu en premier argument. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,112 @@
+\hypertarget{classVoyageurCommerce2opti}{\section{\-Voyageur\-Commerce2opti \-Class \-Reference}
+\label{classVoyageurCommerce2opti}\index{\-Voyageur\-Commerce2opti@{\-Voyageur\-Commerce2opti}}
+}
+
+
+\-Classe résolvant le problème du voyageur de commerce.  
+
+
+
+
+{\ttfamily \#include $<$\-Voyageur\-Commerce2opti.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVoyageurCommerce2opti_a7ef5b64d3dcf8cce690a7c1563c3ca62}{\-Voyageur\-Commerce2opti} (std\-::vector$<$ int $>$ const \&client)
+\begin{DoxyCompactList}\small\item\em \-Constructeur de \hyperlink{classVoyageurCommerce2opti}{\-Voyageur\-Commerce2opti}. \end{DoxyCompactList}\item 
+std\-::pair$<$ int, std\-::vector\*
+$<$ int $>$ \& $>$ \hyperlink{classVoyageurCommerce2opti_a82ef5f5b3ef438c9fb72eeb8174d18bf}{execute} (\hyperlink{structdonnees}{donnees} const \&d)
+\begin{DoxyCompactList}\small\item\em \-Fonction résolvant le problème du voyageur de commerce. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVoyageurCommerce2opti_ad09c507e5414bda90a79a99774ecf5ad}{recursif\-Longueur\-Min} (std\-::vector$<$ int $>$ \&permut, std\-::vector$<$ int $>$ \&index, \hyperlink{structdonnees}{donnees} const \&d, int longueur\-Courante)
+\begin{DoxyCompactList}\small\item\em \-Fonction récursive résolvant le problème du voyageur de commerce \-Cette version place à chaque itération tous les clients possibles dans l'emplacement suivant de la permutation \-De plus, elle optimise l'algorithme en calculant la longueur à chaque itération, et pas seulement à la fin, pour couper plus tôt le déroulement de l'algorithme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classVoyageurCommerce2opti_ada54e7751780f59762d97ab9d016a8fe}{std\-::vector$<$ int $>$ const \& \hyperlink{classVoyageurCommerce2opti_ada54e7751780f59762d97ab9d016a8fe}{clients}}\label{classVoyageurCommerce2opti_ada54e7751780f59762d97ab9d016a8fe}
+
+\begin{DoxyCompactList}\small\item\em \-Tableau des clients. \end{DoxyCompactList}\item 
+\hypertarget{classVoyageurCommerce2opti_a906db95ec646cca3637c1f86d34f7ec7}{std\-::vector$<$ int $>$ \hyperlink{classVoyageurCommerce2opti_a906db95ec646cca3637c1f86d34f7ec7}{permutation\-Min}}\label{classVoyageurCommerce2opti_a906db95ec646cca3637c1f86d34f7ec7}
+
+\begin{DoxyCompactList}\small\item\em \-La permutation offrant une longueur minimum. \end{DoxyCompactList}\item 
+\hypertarget{classVoyageurCommerce2opti_a3adfaf268f6b268121a955d3f3670df4}{int \hyperlink{classVoyageurCommerce2opti_a3adfaf268f6b268121a955d3f3670df4}{longueur\-Min}}\label{classVoyageurCommerce2opti_a3adfaf268f6b268121a955d3f3670df4}
+
+\begin{DoxyCompactList}\small\item\em \-La longueur minimum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Classe résolvant le problème du voyageur de commerce. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classVoyageurCommerce2opti_a7ef5b64d3dcf8cce690a7c1563c3ca62}{\index{\-Voyageur\-Commerce2opti@{\-Voyageur\-Commerce2opti}!\-Voyageur\-Commerce2opti@{\-Voyageur\-Commerce2opti}}
+\index{\-Voyageur\-Commerce2opti@{\-Voyageur\-Commerce2opti}!VoyageurCommerce2opti@{\-Voyageur\-Commerce2opti}}
+\subsubsection[{\-Voyageur\-Commerce2opti}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Voyageur\-Commerce2opti\-::\-Voyageur\-Commerce2opti} (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ int $>$ const \&}]{client}
+\end{DoxyParamCaption}
+)}}\label{classVoyageurCommerce2opti_a7ef5b64d3dcf8cce690a7c1563c3ca62}
+
+
+\-Constructeur de \hyperlink{classVoyageurCommerce2opti}{\-Voyageur\-Commerce2opti}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & \-Le tableau des clients \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classVoyageurCommerce2opti_a82ef5f5b3ef438c9fb72eeb8174d18bf}{\index{\-Voyageur\-Commerce2opti@{\-Voyageur\-Commerce2opti}!execute@{execute}}
+\index{execute@{execute}!VoyageurCommerce2opti@{\-Voyageur\-Commerce2opti}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<$ int, std\-::vector$<$ int $>$ \& $>$ {\bf \-Voyageur\-Commerce2opti\-::execute} (
+\begin{DoxyParamCaption}
+\item[{{\bf donnees} const \&}]{d}
+\end{DoxyParamCaption}
+)}}\label{classVoyageurCommerce2opti_a82ef5f5b3ef438c9fb72eeb8174d18bf}
+
+
+\-Fonction résolvant le problème du voyageur de commerce. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em d} & \-Les données du problème \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Paire (longueur\-Min, permutation\-Min) 
+\end{DoxyReturn}
+\hypertarget{classVoyageurCommerce2opti_ad09c507e5414bda90a79a99774ecf5ad}{\index{\-Voyageur\-Commerce2opti@{\-Voyageur\-Commerce2opti}!recursif\-Longueur\-Min@{recursif\-Longueur\-Min}}
+\index{recursif\-Longueur\-Min@{recursif\-Longueur\-Min}!VoyageurCommerce2opti@{\-Voyageur\-Commerce2opti}}
+\subsubsection[{recursif\-Longueur\-Min}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Voyageur\-Commerce2opti\-::recursif\-Longueur\-Min} (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ int $>$ \&}]{permut, }
+\item[{std\-::vector$<$ int $>$ \&}]{copie\-Client, }
+\item[{{\bf donnees} const \&}]{d, }
+\item[{int}]{longueur\-Courante}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classVoyageurCommerce2opti_ad09c507e5414bda90a79a99774ecf5ad}
+
+
+\-Fonction récursive résolvant le problème du voyageur de commerce \-Cette version place à chaque itération tous les clients possibles dans l'emplacement suivant de la permutation \-De plus, elle optimise l'algorithme en calculant la longueur à chaque itération, et pas seulement à la fin, pour couper plus tôt le déroulement de l'algorithme. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em permut} & \-La permutation courante \\
+\hline
+{\em copie\-Client} & \-Le tableau des clients restants \\
+\hline
+{\em d} & \-Les données du problème \\
+\hline
+{\em longueur\-Courante} & \-La longueur de la permutation courante \\
+\hline
+\end{DoxyParams}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{VoyageurCommerce2opti_8h}{\-Voyageur\-Commerce2opti.\-h}\item 
+\hyperlink{VoyageurCommerce2opti_8cpp}{\-Voyageur\-Commerce2opti.\-cpp}\end{DoxyCompactItemize}

@@ -1,22 +1,29 @@
 #ifndef VOYAGEUR_COMMERCE2OPTI_H	
 #define VOYAGEUR_COMMERCE2OPTI_H
 
+/*! \file VoyageurCommerce2opti.h
+	\brief Optimisation de la deuxième version du problème de voyageur de commerce
+	\author RIOU Matthieu, MAUSSION Damien
+*/
+
 #include "donnees.h"
 #include "Tournee.h"
 #include <vector>
-#include <list>
 #include <utility>
+#include <limits>
 
+
+/*! \class VoyageurCommerce2opti
+	\brief Classe résolvant le problème du voyageur de commerce
+*/
 class VoyageurCommerce2opti
 {
 	private:
-		std::vector<int> const& clients;
-		std::vector<int> permutationMin;
-		int longueurMin;
+		std::vector<int> const& clients;	//!< Tableau des clients
+		std::vector<int> permutationMin;	//!< La permutation offrant une longueur minimum
+		int longueurMin;					//!< La longueur minimum
 		
 		void recursifLongueurMin(std::vector<int>& permut, std::vector<int>& index, donnees const& d, int longueurCourante);
-		int calculLongueur(std::vector<int> const& permut, donnees const& d) const;
-
 
 	public:
 		VoyageurCommerce2opti(std::vector<int> const& client);

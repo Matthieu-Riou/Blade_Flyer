@@ -1,0 +1,145 @@
+\hypertarget{classEnumeration}{\section{\-Enumeration \-Class \-Reference}
+\label{classEnumeration}\index{\-Enumeration@{\-Enumeration}}
+}
+
+
+\-Classe définissant une énumération de clients.  
+
+
+
+
+{\ttfamily \#include $<$\-Enumeration.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEnumeration_a18ef77b8870e03938ddea0728ede0f06}{\-Enumeration} (\hyperlink{structdonnees}{donnees} const \&don)
+\begin{DoxyCompactList}\small\item\em \-Constructeur de \hyperlink{classEnumeration}{\-Enumeration}. \end{DoxyCompactList}\item 
+std\-::vector$<$ int $>$ const \& \hyperlink{classEnumeration_aa6d9aef6ae88861097dd900f3c33be43}{get\-Tab} () const 
+\begin{DoxyCompactList}\small\item\em \-Getter sur le tableau de clients. \end{DoxyCompactList}\item 
+int \hyperlink{classEnumeration_a819f23f4f009be4ff562fcdd1918d1ca}{get\-Capacite\-Restante} () const 
+\begin{DoxyCompactList}\small\item\em \-Getter sur la capacité restante. \end{DoxyCompactList}\item 
+int \hyperlink{classEnumeration_ab75f6eeeaacd76611fbcb530d2760f87}{get\-Next\-Client} () const 
+\begin{DoxyCompactList}\small\item\em \-Getter sur le client suivant. \end{DoxyCompactList}\item 
+void \hyperlink{classEnumeration_a716f90ba3d195719362619fd1d4fb5d0}{add} (int client)
+\begin{DoxyCompactList}\small\item\em \-Ajoute un client à l'énumératio. \end{DoxyCompactList}\item 
+void \hyperlink{classEnumeration_abf53c7897ed2c65544c64d31dc2901a1}{remove\-Last} ()
+\begin{DoxyCompactList}\small\item\em empty \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classEnumeration_af0468f929fc7b5dac8d94ba4d209af15}{std\-::vector$<$ int $>$ \hyperlink{classEnumeration_af0468f929fc7b5dac8d94ba4d209af15}{tab}}\label{classEnumeration_af0468f929fc7b5dac8d94ba4d209af15}
+
+\begin{DoxyCompactList}\small\item\em \-Tableau des clients. \end{DoxyCompactList}\item 
+\hypertarget{classEnumeration_a4bf6e297716b2118cee8d333791b160c}{int \hyperlink{classEnumeration_a4bf6e297716b2118cee8d333791b160c}{capacite\-Restante}}\label{classEnumeration_a4bf6e297716b2118cee8d333791b160c}
+
+\begin{DoxyCompactList}\small\item\em \-Capacité restante du drône. \end{DoxyCompactList}\item 
+\hypertarget{classEnumeration_a327cc1245b14250ea369fe6fcd95ef76}{\hyperlink{structdonnees}{donnees} const \& \hyperlink{classEnumeration_a327cc1245b14250ea369fe6fcd95ef76}{d}}\label{classEnumeration_a327cc1245b14250ea369fe6fcd95ef76}
+
+\begin{DoxyCompactList}\small\item\em \-Données du problème. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Classe définissant une énumération de clients. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classEnumeration_a18ef77b8870e03938ddea0728ede0f06}{\index{\-Enumeration@{\-Enumeration}!\-Enumeration@{\-Enumeration}}
+\index{\-Enumeration@{\-Enumeration}!Enumeration@{\-Enumeration}}
+\subsubsection[{\-Enumeration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Enumeration\-::\-Enumeration} (
+\begin{DoxyParamCaption}
+\item[{{\bf donnees} const \&}]{don}
+\end{DoxyParamCaption}
+)}}\label{classEnumeration_a18ef77b8870e03938ddea0728ede0f06}
+
+
+\-Constructeur de \hyperlink{classEnumeration}{\-Enumeration}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em don} & \-Les données du problèmes \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classEnumeration_a716f90ba3d195719362619fd1d4fb5d0}{\index{\-Enumeration@{\-Enumeration}!add@{add}}
+\index{add@{add}!Enumeration@{\-Enumeration}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Enumeration\-::add} (
+\begin{DoxyParamCaption}
+\item[{int}]{client}
+\end{DoxyParamCaption}
+)}}\label{classEnumeration_a716f90ba3d195719362619fd1d4fb5d0}
+
+
+\-Ajoute un client à l'énumératio. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & \-Le client a ajouté \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{\-Precondition}
+demande du client $<$= capacite\-Restante 
+\end{DoxyPrecond}
+\hypertarget{classEnumeration_a819f23f4f009be4ff562fcdd1918d1ca}{\index{\-Enumeration@{\-Enumeration}!get\-Capacite\-Restante@{get\-Capacite\-Restante}}
+\index{get\-Capacite\-Restante@{get\-Capacite\-Restante}!Enumeration@{\-Enumeration}}
+\subsubsection[{get\-Capacite\-Restante}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Enumeration\-::get\-Capacite\-Restante} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEnumeration_a819f23f4f009be4ff562fcdd1918d1ca}
+
+
+\-Getter sur la capacité restante. 
+
+\begin{DoxyReturn}{\-Returns}
+capacite\-Restante 
+\end{DoxyReturn}
+\hypertarget{classEnumeration_ab75f6eeeaacd76611fbcb530d2760f87}{\index{\-Enumeration@{\-Enumeration}!get\-Next\-Client@{get\-Next\-Client}}
+\index{get\-Next\-Client@{get\-Next\-Client}!Enumeration@{\-Enumeration}}
+\subsubsection[{get\-Next\-Client}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Enumeration\-::get\-Next\-Client} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEnumeration_ab75f6eeeaacd76611fbcb530d2760f87}
+
+
+\-Getter sur le client suivant. 
+
+\begin{DoxyReturn}{\-Returns}
+1 si c'est le premier client, le dernier client + 1 sinon 
+\end{DoxyReturn}
+\hypertarget{classEnumeration_aa6d9aef6ae88861097dd900f3c33be43}{\index{\-Enumeration@{\-Enumeration}!get\-Tab@{get\-Tab}}
+\index{get\-Tab@{get\-Tab}!Enumeration@{\-Enumeration}}
+\subsubsection[{get\-Tab}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ int $>$ const \& {\bf \-Enumeration\-::get\-Tab} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classEnumeration_aa6d9aef6ae88861097dd900f3c33be43}
+
+
+\-Getter sur le tableau de clients. 
+
+\begin{DoxyReturn}{\-Returns}
+tab 
+\end{DoxyReturn}
+\hypertarget{classEnumeration_abf53c7897ed2c65544c64d31dc2901a1}{\index{\-Enumeration@{\-Enumeration}!remove\-Last@{remove\-Last}}
+\index{remove\-Last@{remove\-Last}!Enumeration@{\-Enumeration}}
+\subsubsection[{remove\-Last}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Enumeration\-::remove\-Last} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classEnumeration_abf53c7897ed2c65544c64d31dc2901a1}
+
+
+empty 
+
+\-Enlève le dernier client de l'énumération \begin{DoxyPrecond}{\-Precondition}
+tab n'est pas vide 
+\end{DoxyPrecond}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Enumeration_8h}{\-Enumeration.\-h}\item 
+\hyperlink{Enumeration_8cpp}{\-Enumeration.\-cpp}\end{DoxyCompactItemize}

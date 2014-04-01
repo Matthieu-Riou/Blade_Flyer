@@ -1,37 +1,33 @@
 #ifndef TOURNEE_H
 #define TOURNEE_H
 
+/*! \file Tournee.h
+	\brief Définie une Tournée
+	\author RIOU Matthieu, MAUSSION Damien
+*/
+
 #include <vector>
-#include <list>
 #include <utility> 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <glpk.h>
 #include "Enumeration.h"
 
-struct Variable
-{
-	int depart;
-	int arrivee;
-	char nom[4];
-	int valeur;
-};
-
+/*! \class Tournee
+	\brief Classe définissant une Tournée
+*/
 class Tournee
 {
 	private: 
-		std::vector<int> clients;
-		std::vector<int> permutationMin;
-		int longueurMin;
+		std::vector<int> clients;			//!< Tableau des clients
+		std::vector<int> permutationMin;	//!< La permutation offrant une longueur minimum
+		int longueurMin;					//!< La longueur minimum
 	
 	public:
 		Tournee(Enumeration const& e);
 		std::vector<int> const& getClients() const;
 
 		int getLongueurMin() const;
+		std::vector<int> getPermutationMin() const;
 
-		int calculLongueurMin(donnees const& d);
+		void calculLongueurMin(donnees const& d);
 };
 
 

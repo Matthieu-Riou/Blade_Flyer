@@ -1,0 +1,136 @@
+\hypertarget{classVoyageurCommerce}{\section{\-Voyageur\-Commerce \-Class \-Reference}
+\label{classVoyageurCommerce}\index{\-Voyageur\-Commerce@{\-Voyageur\-Commerce}}
+}
+
+
+\-Classe résolvant le problème du voyageur de commerce.  
+
+
+
+
+{\ttfamily \#include $<$\-Voyageur\-Commerce.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVoyageurCommerce_aa40ed299dffec21a34a0bbadf14141c6}{\-Voyageur\-Commerce} (std\-::vector$<$ int $>$ const \&client)
+\begin{DoxyCompactList}\small\item\em \-Constructeur de \hyperlink{classVoyageurCommerce}{\-Voyageur\-Commerce}. \end{DoxyCompactList}\item 
+std\-::pair$<$ int, std\-::vector\*
+$<$ int $>$ \& $>$ \hyperlink{classVoyageurCommerce_af07653a7fff33dae41b62150b75508fb}{execute} (\hyperlink{structdonnees}{donnees} const \&d)
+\begin{DoxyCompactList}\small\item\em \-Fonction résolvant le problème du voyageur de commerce. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classVoyageurCommerce_a0ecd163ab1850e70da8ee97144f1f4f5}{recursif\-Longueur\-Min} (std\-::vector$<$ int $>$ \&permut, int next\-Client, \hyperlink{structdonnees}{donnees} const \&d)
+\begin{DoxyCompactList}\small\item\em \-Fonction récursive résolvant le problème du voyageur de commerce \-Cette version place à chaque itération le client suivant dans tous les emplacements possibles du tableau de permutation. \end{DoxyCompactList}\item 
+int \hyperlink{classVoyageurCommerce_a6309e52db23855bec21e8a54456c3c6d}{calcul\-Longueur} (std\-::vector$<$ int $>$ const \&permut, \hyperlink{structdonnees}{donnees} const \&d) const 
+\begin{DoxyCompactList}\small\item\em \-Fonction calculant la longueur d'une permutation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classVoyageurCommerce_aea6da550ba7f8463aafedbc5c08b7bbd}{std\-::vector$<$ int $>$ const \& \hyperlink{classVoyageurCommerce_aea6da550ba7f8463aafedbc5c08b7bbd}{clients}}\label{classVoyageurCommerce_aea6da550ba7f8463aafedbc5c08b7bbd}
+
+\begin{DoxyCompactList}\small\item\em \-Tableau des clients. \end{DoxyCompactList}\item 
+\hypertarget{classVoyageurCommerce_aec7321956918c45bdc6bc43b7c8fcfba}{std\-::vector$<$ int $>$ \hyperlink{classVoyageurCommerce_aec7321956918c45bdc6bc43b7c8fcfba}{permutation\-Min}}\label{classVoyageurCommerce_aec7321956918c45bdc6bc43b7c8fcfba}
+
+\begin{DoxyCompactList}\small\item\em \-La permutation offrant une longueur minimum. \end{DoxyCompactList}\item 
+\hypertarget{classVoyageurCommerce_aa0bd790e9e32b7081a57bde47621c3e5}{int \hyperlink{classVoyageurCommerce_aa0bd790e9e32b7081a57bde47621c3e5}{longueur\-Min}}\label{classVoyageurCommerce_aa0bd790e9e32b7081a57bde47621c3e5}
+
+\begin{DoxyCompactList}\small\item\em \-La longueur minimum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Classe résolvant le problème du voyageur de commerce. 
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classVoyageurCommerce_aa40ed299dffec21a34a0bbadf14141c6}{\index{\-Voyageur\-Commerce@{\-Voyageur\-Commerce}!\-Voyageur\-Commerce@{\-Voyageur\-Commerce}}
+\index{\-Voyageur\-Commerce@{\-Voyageur\-Commerce}!VoyageurCommerce@{\-Voyageur\-Commerce}}
+\subsubsection[{\-Voyageur\-Commerce}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Voyageur\-Commerce\-::\-Voyageur\-Commerce} (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ int $>$ const \&}]{client}
+\end{DoxyParamCaption}
+)}}\label{classVoyageurCommerce_aa40ed299dffec21a34a0bbadf14141c6}
+
+
+\-Constructeur de \hyperlink{classVoyageurCommerce}{\-Voyageur\-Commerce}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em client} & \-Le tableau des clients \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classVoyageurCommerce_a6309e52db23855bec21e8a54456c3c6d}{\index{\-Voyageur\-Commerce@{\-Voyageur\-Commerce}!calcul\-Longueur@{calcul\-Longueur}}
+\index{calcul\-Longueur@{calcul\-Longueur}!VoyageurCommerce@{\-Voyageur\-Commerce}}
+\subsubsection[{calcul\-Longueur}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Voyageur\-Commerce\-::calcul\-Longueur} (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ int $>$ const \&}]{permut, }
+\item[{{\bf donnees} const \&}]{d}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classVoyageurCommerce_a6309e52db23855bec21e8a54456c3c6d}
+
+
+\-Fonction calculant la longueur d'une permutation. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em permut} & \-La permutation courante \\
+\hline
+{\em d} & \-Les données du problème \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-La longueur de la permutation 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{\-Precondition}
+permut n'est pas vide 
+\end{DoxyPrecond}
+\hypertarget{classVoyageurCommerce_af07653a7fff33dae41b62150b75508fb}{\index{\-Voyageur\-Commerce@{\-Voyageur\-Commerce}!execute@{execute}}
+\index{execute@{execute}!VoyageurCommerce@{\-Voyageur\-Commerce}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<$ int, std\-::vector$<$ int $>$ \& $>$ {\bf \-Voyageur\-Commerce\-::execute} (
+\begin{DoxyParamCaption}
+\item[{{\bf donnees} const \&}]{d}
+\end{DoxyParamCaption}
+)}}\label{classVoyageurCommerce_af07653a7fff33dae41b62150b75508fb}
+
+
+\-Fonction résolvant le problème du voyageur de commerce. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em d} & \-Les données du problème \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Paire (longueur\-Min, permutation\-Min) 
+\end{DoxyReturn}
+\hypertarget{classVoyageurCommerce_a0ecd163ab1850e70da8ee97144f1f4f5}{\index{\-Voyageur\-Commerce@{\-Voyageur\-Commerce}!recursif\-Longueur\-Min@{recursif\-Longueur\-Min}}
+\index{recursif\-Longueur\-Min@{recursif\-Longueur\-Min}!VoyageurCommerce@{\-Voyageur\-Commerce}}
+\subsubsection[{recursif\-Longueur\-Min}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Voyageur\-Commerce\-::recursif\-Longueur\-Min} (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ int $>$ \&}]{permut, }
+\item[{int}]{next\-Client, }
+\item[{{\bf donnees} const \&}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classVoyageurCommerce_a0ecd163ab1850e70da8ee97144f1f4f5}
+
+
+\-Fonction récursive résolvant le problème du voyageur de commerce \-Cette version place à chaque itération le client suivant dans tous les emplacements possibles du tableau de permutation. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em permut} & \-La permutation courante \\
+\hline
+{\em next\-Client} & \-Le client suivant \\
+\hline
+{\em d} & \-Les données du problème \\
+\hline
+\end{DoxyParams}
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{VoyageurCommerce_8h}{\-Voyageur\-Commerce.\-h}\item 
+\hyperlink{VoyageurCommerce_8cpp}{\-Voyageur\-Commerce.\-cpp}\end{DoxyCompactItemize}

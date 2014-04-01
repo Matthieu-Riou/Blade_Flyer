@@ -1,0 +1,66 @@
+\hypertarget{AlgoEnumeration_8h}{\section{\-Algo\-Enumeration.\-h \-File \-Reference}
+\label{AlgoEnumeration_8h}\index{\-Algo\-Enumeration.\-h@{\-Algo\-Enumeration.\-h}}
+}
+
+
+\-Les algorithmes pour l'énumération des regroupements de clients.  
+
+
+{\ttfamily \#include $<$list$>$}\*
+{\ttfamily \#include \char`\"{}donnees.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}\-Tournee.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}\-Enumeration.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::list$<$ \hyperlink{classTournee}{\-Tournee} $\ast$ $>$ \hyperlink{AlgoEnumeration_8h_a251b3416dda8e59bab987ec02897f383}{enum\-Tournee} (\hyperlink{structdonnees}{donnees} const \&d)
+\begin{DoxyCompactList}\small\item\em \-Initialise et appelle l'algorithme récursif d'énumuration. \end{DoxyCompactList}\item 
+void \hyperlink{AlgoEnumeration_8h_a36d0899c0d0b409a71d2699bc3b457f6}{algo\-Recursif} (\hyperlink{classEnumeration}{\-Enumeration} \&e, std\-::list$<$ \hyperlink{classTournee}{\-Tournee} $\ast$ $>$ \&t, \hyperlink{structdonnees}{donnees} const \&d)
+\begin{DoxyCompactList}\small\item\em \-Algorithme récursif qui énumère les regroupements de clients possibles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Les algorithmes pour l'énumération des regroupements de clients. \begin{DoxyAuthor}{\-Author}
+\-R\-I\-O\-U \-Matthieu, \-M\-A\-U\-S\-S\-I\-O\-N \-Damien 
+\end{DoxyAuthor}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{AlgoEnumeration_8h_a36d0899c0d0b409a71d2699bc3b457f6}{\index{\-Algo\-Enumeration.\-h@{\-Algo\-Enumeration.\-h}!algo\-Recursif@{algo\-Recursif}}
+\index{algo\-Recursif@{algo\-Recursif}!AlgoEnumeration.h@{\-Algo\-Enumeration.\-h}}
+\subsubsection[{algo\-Recursif}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf algo\-Recursif} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Enumeration} \&}]{e, }
+\item[{std\-::list$<$ {\bf \-Tournee} $\ast$ $>$ \&}]{t, }
+\item[{{\bf donnees} const \&}]{d}
+\end{DoxyParamCaption}
+)}}\label{AlgoEnumeration_8h_a36d0899c0d0b409a71d2699bc3b457f6}
+
+
+\-Algorithme récursif qui énumère les regroupements de clients possibles. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em e} & \-L'énumeration courante \\
+\hline
+{\em t} & \-Le vector des tounées trouvées \\
+\hline
+{\em d} & \-Les données du problème \\
+\hline
+\end{DoxyParams}
+\hypertarget{AlgoEnumeration_8h_a251b3416dda8e59bab987ec02897f383}{\index{\-Algo\-Enumeration.\-h@{\-Algo\-Enumeration.\-h}!enum\-Tournee@{enum\-Tournee}}
+\index{enum\-Tournee@{enum\-Tournee}!AlgoEnumeration.h@{\-Algo\-Enumeration.\-h}}
+\subsubsection[{enum\-Tournee}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<${\bf \-Tournee}$\ast$$>$ {\bf enum\-Tournee} (
+\begin{DoxyParamCaption}
+\item[{{\bf donnees} const \&}]{d}
+\end{DoxyParamCaption}
+)}}\label{AlgoEnumeration_8h_a251b3416dda8e59bab987ec02897f383}
+
+
+\-Initialise et appelle l'algorithme récursif d'énumuration. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em d} & \-Les données du problème \\
+\hline
+\end{DoxyParams}
