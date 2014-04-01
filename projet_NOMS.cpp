@@ -133,13 +133,13 @@ int main(int argc, char *argv[])
 
 	// Calcul de toutes les tournées possibles
 	
-	printf("%d\n\n", d.nblieux);
+	//printf("%d\n\n", d.nblieux);
 
 	//Partie 1
 	
 	std::vector<Tournee*> t = algoGlouton(d);
 	
-	printf("%d\n", t.size());
+	//printf("%d\n", t.size());
 
 
 	//Partie 2
@@ -152,7 +152,7 @@ int main(int argc, char *argv[])
 	
 	//Partie 3
 
-	partitionnementEnsemble(t, d.nblieux);
+	//partitionnementEnsemble(t, d.nblieux);
 
 
 	// Calcul de la longueur min de chaque tournee
