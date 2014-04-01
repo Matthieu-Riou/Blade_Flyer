@@ -23,9 +23,8 @@
 
 /* structures et fonctions de mesure du temps CPU */
 
-struct timeval start_utime, stop_utime;
-//struct timeval start_utime;	//!< Retient le temps de départ du crono
-//struct timeval stop_utime; 	//!< Retient le temps d'arrêt du crono
+struct timeval start_utime;	//!< Retient le temps de départ du crono
+struct timeval stop_utime; 	//!< Retient le temps d'arrêt du crono
 
 /*! \brief Démarre le crono
 */

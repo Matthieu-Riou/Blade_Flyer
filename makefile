@@ -3,7 +3,7 @@ CFLAGS=
 LDFLAGS=-lglpk -lm
 EXEC=Main
 
-SRC=$(wildcard *.cpp )
+SRC=$(wildcard Source/*.cpp )
 OBJ=$(SRC:.cpp=.o)
 
 all:$(EXEC)
@@ -17,7 +17,7 @@ Main:$(OBJ)
 .PHONY: clean mrproper
 
 clean:
-	rm -rf *.o
+	rm -rf Source/*.o
 
 mrproper: clean
 	@rm -rf $(EXEC)
